@@ -18,7 +18,7 @@ The repository provides comprehensive coverage for the following model configura
 | **TM AI Cobot Series** | TM5-700 | TM5X-700 | — | — |
 |  | TM5-900 | TM5X-900 | — | — |
 
-> 💡 **Note:** Robot models are continuously updated and deployed to this repository.
+> 💡 **Note:** The Robot Models packages are continuously updated and deployed to this repository.
 
 ---
 
@@ -48,7 +48,40 @@ user_ws/ or tm2_ws/
 
 ---
 
-### Method A: Manual Selective Deployment
+
+### Method A: Automated Deployment (via Script) `[Recommended]`
+
+Automate the retrieval and deployment process using the workspace loader script.
+> 📖 The Loader Script [Usage Guideline](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/README.md)
+
+#### Step 1: Update `user_workspace.txt`
+Edit your configuration file to define the root path of your active ROS 2 workspace:
+
+```bash
+# ---- Custom Setup (Specify the root directory of your ROS 2 workspace) ----
+# Ensure this points to your active tm2_ros2 directory (e.g., assume your active ROS workspace name is tm2_ws)
+WS_ROOT=$HOME/tm2_ws
+```
+> 📄 Path Workspace Configuration [`user_workspace.txt`](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/user_workspace.txt)
+
+#### Step 2: Execute the Loader Script
+Run the script (⚡ lite_ld.sh) to download and map the package automatically:
+
+```bash
+# Grant executable permissions to the deployment script if needed:
+chmod +x lite_ld.sh
+
+# Fetch and deploy the target model description package:
+./lite_ld.sh tm5s
+
+# Use the force flag (-f) to overwrite existing legacy files if updating:
+# ./lite_ld.sh tm12s tm_description -f
+```
+> 🗂️ The Loader Script [`tm_loader` tool](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/)
+
+---
+
+### Method B: Manual Selective Deployment
 
 Use Git sparse-checkout to download and pull only the specific model files you need.
 
@@ -82,37 +115,6 @@ Ensure the destination directory structure exists, then run the appropriate comm
 
 ---
 
-### Method B: Automated Deployment (via Script)
-
-Automate the retrieval and deployment process using the workspace loader script.
-
-#### Step 1: Update `user_workspace.txt`
-Edit your configuration file to define the root path of your active ROS 2 workspace:
-
-```bash
-# ---- Custom Setup (Specify the root directory of your ROS 2 workspace) ----
-# Ensure this points to your active tm2_ros2 workspace (e.g., your Jazzy workspace)
-WS_ROOT=$HOME/user_ws/tm2_ros2
-```
-> 📄 Path Workspace Configuration [`user_workspace.txt`](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/user_workspace.txt)
-
-#### Step 2: Execute the Loader Script
-Run the script (⚡ lite_ld.sh) to download and map the package automatically:
-
-```bash
-# Grant executable permissions to the deployment script if needed:
-chmod +x lite_ld.sh
-
-# Fetch and deploy the target model description package:
-./lite_ld.sh tm5s
-
-# Use the force flag (-f) to overwrite existing legacy files if updating:
-# ./lite_ld.sh tm12s tm_description -f
-```
-> 🗂️ The Loader Script [`tm_loader` tool](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/)
-
----
-
 ## 3. Post-Deployment Verification & Compilation
 
 ⚠️ **Important:** If you have previously compiled the workspace or added new application packages, you **must** purge old build artifacts. Failing to clean the workspace may cause ROS 2 indexing mismatches and compilation errors.
@@ -120,7 +122,7 @@ chmod +x lite_ld.sh
 Run the following sequence in your terminal to perform a clean rebuild:
 
 ```bash
-# 1. Source the system ROS 2 environment and set DDS middleware
+# 1. Source the system ROS 2 environment and set the DDS middleware
 source /opt/ros/jazzy/setup.bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
