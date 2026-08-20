@@ -9,10 +9,10 @@ This repository contains the official ROS 2 Robot description files (URDF/Xacro)
 The repository provides comprehensive coverage for the following model configurations:
 
 *   **TM AI Cobot S Series:** 
-    *   **Standard:** TM5S, TM12S
-    *   **Standard-X:** TM5SX, TM12SX
-    *   **FT module:** TM5SFT, TM12SFT
-    *   **FT-X module:** TM5SXFT, TM12SXFT
+    *   **Standard:** TM5S, TM6S, TM7S, TM12S, TM14S, TM20S
+    *   **Standard-X:** TM5SX, TM6SX, TM7SX, TM12SX, TM14SX, TM20SX
+    *   **FT module:** TM5SFT, TM6SFT, TM7SFT, TM12SFT, TM14SFT, TM20SFT, TM25SFT, TM30SFT
+    *   **FT-X module:** TM5SXFT, TM6SXFT, TM7SXFT, TM12SXFT, TM14SXFT, TM20SXFT, TM25SXFT, TM30SXFT
 *   **TM AI Cobot Series:** 
     *   **Standard:** TM5-900, TM5-700
     *   **Standard-X:** TM5X-900, TM5X-700

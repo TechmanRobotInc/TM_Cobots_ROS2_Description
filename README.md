@@ -11,12 +11,18 @@ Additionally, this guide (below) details **how to migrate these standalone descr
 ## 1. Quick Reference Table
 
 The repository provides comprehensive coverage for the following model configurations:
-|  | Standard | Standard-X | FT Module | FT-X Module |
-| :---  | :---: | :---: | :---: | :---: |
-| **TM AI Cobot S Series** | TM5S  | TM5SX | TM5SFT | TM5SXFT |
-|  | TM12S  | TM12SX | TM12SFT | TM12SXFT |
-| **TM AI Cobot Series** | TM5-700 | TM5X-700 | — | — |
-|  | TM5-900 | TM5X-900 | — | — |
+|  | Series | Standard | Standard-X | FT Module | FT-X Module |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **TM AI Cobot S Series** | **TM5S** | TM5S | TM5SX | TM5SFT | TM5SXFT |
+| | **TM6S** | TM6S | TM6SX | TM6SFT | TM6SXFT |
+| | **TM7S** | TM7S | TM7SX | TM7SFT | TM7SXFT |
+| | **TM12S** | TM12S | TM12SX | TM12SFT | TM12SXFT |
+| | **TM14S** | TM14S | TM14SX | TM14SFT | TM14SXFT |
+| | **TM20S** | TM20S | TM20SX | TM20SFT | TM20SXFT |
+| | **TM25S** | — | — | TM25SFT | TM25SXFT |
+| | **TM30S** | — | — | TM30SFT | TM30SXFT |
+| **TM AI Cobot Series** | **TM5-700** | TM5-700 | TM5X-700 | — | — |
+| | **TM5-900** | TM5-900 | TM5X-900 | — | — |
 
 > 💡 **Note:** The Robot Models packages are continuously updated and deployed to this repository.
 
