@@ -40,7 +40,7 @@ This guide explains how to migrate robot description files for the **TM AI Cobot
 > The legacy repository only includes the `tm12s` profile by default. Missing profiles must be retrieved from the standalone [TM_Cobots_ROS2_Description](https://github.com/TechmanRobotInc/TM_Cobots_ROS2_Description) repository.
 
 > [!NOTE]
-> <sub>*   **TM ROS2 Jazzy Apps ⬆️ **: TM ROS2 version **Jazzy or higher** is strictly required to support the TM Robots Series directory structure syntax.</sub><br/>
+> <sub>*   **TM ROS2 Jazzy Apps ⬆️**: TM ROS2 version **Jazzy or higher** is strictly required to support the TM Robots Series directory structure syntax.</sub><br/>
 > <sub>*   **Git Engine**: Git version **2.25 or higher** is strictly required to support native sparse-checkout engine syntax.</sub><br/>
 
 ### 📂 Directory Structure Reference
