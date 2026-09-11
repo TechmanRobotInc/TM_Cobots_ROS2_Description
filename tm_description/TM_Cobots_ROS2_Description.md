@@ -14,8 +14,8 @@ The repository provides comprehensive coverage for the following model configura
     *   **FT module:** TM5SFT, TM6SFT, TM7SFT, TM12SFT, TM14SFT, TM20SFT, TM25SFT, TM30SFT
     *   **FT-X module:** TM5SXFT, TM6SXFT, TM7SXFT, TM12SXFT, TM14SXFT, TM20SXFT, TM25SXFT, TM30SXFT
 *   **TM AI Cobot Series:** 
-    *   **Standard:** TM5-900, TM5-700
-    *   **Standard-X:** TM5X-900, TM5X-700
+    *   **Standard:** TM5-900, TM5-700, TM12, TM14, TM16, TM20
+    *   **Standard-X:** TM5X-900, TM5X-700, TM12X, TM14X, TM16X, TM20X
 
 ---
 
@@ -34,6 +34,29 @@ Each robot model includes verified data mapped across four primary configuration
 | **FT Module** | ✅ Integrated | ✅ Integrated |
 | **FT-X Module** | ❌ None | ✅ Integrated |
 
+### TM AI Cobot S Series Matrix Table
+| Model Series | Standard | Standard-X | FT module | FT-X module |
+| :--- | :---: | :---: | :---: | :---: |
+| **TM5S** | TM5S | TM5SX | TM5SFT | TM5SXFT |
+| **TM6S** | TM6S | TM6SX | TM6SFT | TM6SXFT |
+| **TM7S** | TM7S | TM7SX | TM7SFT | TM7SXFT |
+| **TM12S** | TM12S | TM12SX | TM12SFT | TM12SXFT |
+| **TM14S** | TM14S | TM14SX | TM14SFT | TM14SXFT |
+| **TM20S** | TM20S | TM20SX | TM20SFT | TM20SXFT |
+| **TM25S** | - | - | TM25SFT | TM25SXFT |
+| **TM30S** | - | - | TM30SFT | TM30SXFT |
+
+### TM AI Cobot Series Matrix Table
+| Model Series | Standard | Standard-X | FT module | FT-X module |
+| :--- | :---: | :---: | :---: | :---: |
+| **TM5-700** | TM5-700 | TM5X-700 | - | - |
+| **TM5-900** | TM5-900 | TM5X-900 | - | - |
+| **TM6** | TM6 | TM6X | - | - |
+| **TM7** | TM7 | TM7X | - | - |
+| **TM12** | TM12 | TM12X | - | - |
+| **TM14** | TM14 | TM14X | - | - |
+| **TM16** | TM16 | TM16X | - | - |
+| **TM20** | TM20 | TM20X | - | - |
 
 ---
 
@@ -42,33 +65,43 @@ Each robot model includes verified data mapped across four primary configuration
 The repository adheres to standard ROS 2 package conventions. Below are directory tree examples showing how configurations are mapped for different series.
 
 ### Example A: TM AI Cobot S Series (e.g., TM12S)
-Located under the `cobot_s/` subdirectory:
+Located under the TM12S series configuration subdirectory:
+
 ```bash
-tm_description/cobot_s/tm12s_description/
-                       ├── launch/            # ROS 2 launch scripts
-                       ├── meshes/            # 3D visualization & collision models
-                           ├── tm12s/         # Standard meshes
-                           ├── tm12sx/        # X-variant meshes
-                           ├── tm12sft/       # Force-Torque variant meshes
-                           └── tm12sxft/      # X + Force-Torque variant meshes
-                       ├── rviz/              # RViz2 configuration files
-                       ├── xacro/             # Parameterized robot description source files
-                       ├── CMakeLists.txt     # Build configuration
-                       └── package.xml        # ROS 2 package dependencies metadata
+tm2_ws/ or ros2_ws/ or user_ws/            # User's workspace root directory
+└── tm2_ros2/                              # TM ROS 2 standard source code directory (Acts as the 'src' space)
+    └── tm_description/                    # Robot Model Description Module
+        └── cobot_s/                       # TM Cobot S-Series folder
+                ├── tm12s_description/     # TM12S 3D meshes, URDF models, and Xacro files
+                     ├── launch/           # ROS 2 launch scripts
+                     ├── meshes/           # 3D visualization & collision models
+                         ├── tm12s/        # Standard meshes
+                         ├── tm12sx/       # X-variant meshes
+                         ├── tm12sft/      # Force-Torque variant meshes
+                         └── tm12sxft/     # X + Force-Torque variant meshes
+                     ├── rviz/             # RViz2 configuration files
+                     ├── xacro/            # Parameterized robot description source files
+                     ├── CMakeLists.txt    # Build configuration
+                     └── package.xml       # ROS 2 package dependencies metadata
 ```
 
 ### Example B: TM AI Cobot Series (e.g., TM5-900)
-Located under the `cobot/` subdirectory:
+Located under the TM5-900 series configuration subdirectory:
+
 ```bash
-tm_description/cobot/tm5_900_description/
-                       ├── launch/            # ROS 2 launch scripts
-                       ├── meshes/            # 3D visualization & collision models
-                           ├── tm5-900/       # Standard meshes
-                           └── tm5x-900/      # X-variant meshes
-                       ├── rviz/              # RViz2 configuration files
-                       ├── xacro/             # Parameterized robot description source files
-                       ├── CMakeLists.txt     # Build configuration
-                       └── package.xml        # ROS 2 package dependencies metadata
+tm2_ws/ or ros2_ws/ or user_ws/            # User's workspace root directory
+└── tm2_ros2/                              # TM ROS 2 standard source code directory (Acts as the 'src' space)
+    └── tm_description/                    # Robot Model Description Module
+        └── cobot/                         # TM Cobot Series folder
+                ├── tm5_900_description/   # TM5-900 3D meshes, URDF models, and Xacro files
+                     ├── launch/           # ROS 2 launch scripts
+                     ├── meshes/           # 3D visualization & collision models
+                         ├── tm5-900/      # Standard meshes
+                         └── tm5x-900/     # X-variant meshes
+                     ├── rviz/             # RViz2 configuration files
+                     ├── xacro/            # Parameterized robot description source files
+                     ├── CMakeLists.txt    # Build configuration
+                     └── package.xml       # ROS 2 package dependencies metadata
 ```
 
 ---
