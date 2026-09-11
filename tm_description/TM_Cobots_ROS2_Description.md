@@ -51,8 +51,6 @@ Each robot model includes verified data mapped across four primary configuration
 | :--- | :---: | :---: | :---: | :---: |
 | **TM5-700** | TM5-700 | TM5X-700 | - | - |
 | **TM5-900** | TM5-900 | TM5X-900 | - | - |
-| **TM6** | TM6 | TM6X | - | - |
-| **TM7** | TM7 | TM7X | - | - |
 | **TM12** | TM12 | TM12X | - | - |
 | **TM14** | TM14 | TM14X | - | - |
 | **TM16** | TM16 | TM16X | - | - |
