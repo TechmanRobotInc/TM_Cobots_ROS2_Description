@@ -1,6 +1,6 @@
 # TM_Cobots_ROS2_Description
 
-This repository contains the official ROS 2 Robot description files (URDF/Xacro) and 3D meshes for Techman Robot's **TM AI Cobot S** and **TM AI Cobot** series. These files are essential for robot visualization (**RViz**), simulation (**Gazebo**), and motion planning (**MoveIt 2**).
+This repository contains the official ROS 2 Robot description files (URDF/Xacro) and 3D meshes for the Techman Robot's **TM AI Cobot S** and **TM AI Cobot** series. These files are essential for robot visualization (**RViz**), simulation (**Gazebo**), and motion planning (**MoveIt 2**).
 
 ---
 
@@ -73,10 +73,10 @@ tm2_ws/ or ros2_ws/ or user_ws/            # User's workspace root directory
                 ├── tm12s_description/     # TM12S 3D meshes, URDF models, and Xacro files
                      ├── launch/           # ROS 2 launch scripts
                      ├── meshes/           # 3D visualization & collision models
-                         ├── tm12s/        # Standard meshes
-                         ├── tm12sx/       # X-variant meshes
-                         ├── tm12sft/      # Force-Torque variant meshes
-                         └── tm12sxft/     # X + Force-Torque variant meshes
+                     │   ├── tm12s/        # Standard meshes
+                     │   ├── tm12sx/       # X-variant meshes
+                     │   ├── tm12sft/      # Force-Torque variant meshes
+                     │   └── tm12sxft/     # X + Force-Torque variant meshes
                      ├── rviz/             # RViz2 configuration files
                      ├── xacro/            # Parameterized robot description source files
                      ├── CMakeLists.txt    # Build configuration
@@ -94,8 +94,8 @@ tm2_ws/ or ros2_ws/ or user_ws/            # User's workspace root directory
                 ├── tm5_900_description/   # TM5-900 3D meshes, URDF models, and Xacro files
                      ├── launch/           # ROS 2 launch scripts
                      ├── meshes/           # 3D visualization & collision models
-                         ├── tm5-900/      # Standard meshes
-                         └── tm5x-900/     # X-variant meshes
+                     │   ├── tm5-900/      # Standard meshes
+                     │   └── tm5x-900/     # X-variant meshes
                      ├── rviz/             # RViz2 configuration files
                      ├── xacro/            # Parameterized robot description source files
                      ├── CMakeLists.txt    # Build configuration
