@@ -69,9 +69,9 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 
 > ### 🚀 Method A: Automated Deployment (via Script) `[Recommended]`
 > 
-> Automate the retrieval and deployment process using the workspace loader script.
+> 📖 The Loader Script [Usage Guideline](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/README.md) and [tools](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/)
 >
-> 📖 The Loader Script [Usage Guideline](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/README.md)
+> Automate the retrieval and deployment process using the workspace loader script.
 > 
 >> ```bash
 >> ./lite_ld.sh [MODEL] [PACKAGE (optional)] [-f (optional)]
@@ -103,8 +103,8 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 >> 
 >> # Use the force flag (-f) to overwrite existing legacy files if updating:
 >> #./lite_ld.sh tm12s tm_description -f
->```
-> 🗂️ The Loader Script [`tm_loader` tool](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/)
+>>```
+>>
 
 ---
 
