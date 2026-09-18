@@ -98,10 +98,10 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 >> # Grant executable permissions to the deployment script if needed:
 >> chmod +x lite_ld.sh
 >> 
->> # Fetch and deploy the target model description package:
+>> # Fetch and deploy the target model description package(e.g., `tm5s`):
 >> ./lite_ld.sh tm5s
 >> 
->> # Use the force flag (-f) to overwrite existing legacy files if updating:
+>> # Use the force flag (-f) to overwrite existing legacy files(e.g., `tm12s`) if updating:
 >> #./lite_ld.sh tm12s tm_description -f
 >>```
 >>
@@ -118,7 +118,7 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 >> git clone --filter=blob:none --no-checkout https://github.com/TechmanRobotInc/TM_Cobots_ROS2_Description
 >> cd TM_Cobots_ROS2_Description
 >> 
->> # Configure the sparse-checkout engine for the target model
+>> # Configure the sparse-checkout engine for the target model(e.g., `tm5s`) 
 >> git sparse-checkout init --cone
 >> git sparse-checkout set tm_description/cobot_s/tm5s_description
 >> 
