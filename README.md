@@ -70,6 +70,7 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 > ### 🚀 Method A: Automated Deployment (via Script) `[Recommended]`
 > 
 > Automate the retrieval and deployment process using the workspace loader script.
+>
 > 📖 The Loader Script [Usage Guideline](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/README.md)
 > 
 >> ```bash
