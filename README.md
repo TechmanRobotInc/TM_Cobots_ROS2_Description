@@ -48,7 +48,7 @@ This guide explains how to migrate robot description files for the **TM AI Cobot
 
 > 💡 **Note:** The legacy repository only includes the `tm12s` and `tm5-900` profiles by default. Other needed profiles must be retrieved from the standalone [TM_Cobots_ROS2_Description](https://github.com/TechmanRobotInc/TM_Cobots_ROS2_Description) repository.
 
-For more detailed information, please refer to [Migration & Deployment Usage Guideline](./Migration_and_Deployment_Guide).
+For more detailed information, please refer to [Migration & Deployment Usage Guideline](./Migration_and_Deployment_Guide.md).
 
 ### Quick Start with Examples
 
