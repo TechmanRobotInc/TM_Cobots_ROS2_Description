@@ -1,15 +1,17 @@
 # Migration & Deployment Guide
 
-### Integrating Standalone Descriptions into Legacy `tm2_ros2` Workspace
+## Integrating Standalone Descriptions into Legacy `tm2_ros2` Workspace
 This guide explains how to migrate robot description files for the **TM AI Cobot S Series** (e.g., `tm5s`) into the legacy `tm2_ros2` workspace.
 
-> The legacy repository only includes the `tm12s` profile by default. Missing profiles must be retrieved from the standalone [TM_Cobots_ROS2_Description](https://github.com/TechmanRobotInc/TM_Cobots_ROS2_Description) repository.
+>  💡 **Note:** The legacy repository only includes the `tm12s` and `tm5-900` profiles by default. Missing profiles must be retrieved from the standalone [TM_Cobots_ROS2_Description](https://github.com/TechmanRobotInc/TM_Cobots_ROS2_Description) repository.
 
-> [!NOTE]
-> <sub>*   **TM ROS2 Jazzy Apps ⬆️**: TM ROS2 version **Jazzy or higher** is strictly required to support the TM Robots Series directory structure syntax.</sub><br/>
-> <sub>*   **Git Engine**: Git version **2.25 or higher** is strictly required to support native sparse-checkout engine syntax.</sub><br/>
+### 📋 Prerequisites
+* **TM ROS2 Jazzy Apps ⬆️**: TM ROS2 version **Jazzy or higher** is strictly required to support the TM Robots Series directory structure syntax.
+* **Git Engine**: Git version **2.25 or higher** is strictly required to support native sparse-checkout engine syntax.
 
-### 📂 Directory Structure Reference
+---
+
+## 📂 Directory Structure Reference
 Your workspace **must** maintain the exact layout below to prevent dependency failures and path resolution issues:
 
 > 🔍 Migrated Package Layout Overview 
@@ -31,14 +33,16 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 
 ---
 
-### 🛠️ Integrating Standalone Descriptions into a Legacy `tm2_ros2` Workspace
+## 🛠️ Integrating Standalone Descriptions into a Legacy `tm2_ros2` Workspace
 
 > ### 🚀 Method A: Automated Deployment (via Script) `[Recommended]`
-> 
-> 📖 The Loader Script [Usage Guideline](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/README.md) and [tools](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/)
+>
 >
 > Automate the retrieval and deployment process using the workspace loader script.
 > 
+> 📖 For further details, refer to the Loader Script [Usage Guideline](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/README.md) and [tools](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/)
+> 
+>> #### 📌 Command Syntax
 >> ```bash
 >> ./lite_ld.sh [MODEL] [PACKAGE (optional)] [-f (optional)]
 >> ```
@@ -46,9 +50,10 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 >> #### 📝 Argument Options
 >> *   **`[MODEL]` (Required)**: `tm5s`, `tm12s`, `tm14s`, etc.
 >> *   **`[PACKAGE]` (Optional)**: `tm_description`, `tm_moveit`, `tm_gazebo`.
+>> * **`-f` (Optional)**: Force overwrite flag.
 >>
 >> #### 📍 Step 1: Update `user_workspace.txt`
->> Edit your configuration file to define the root path of your active ROS 2 workspace:
+>> Edit your configuration file to define the root path of your active ROS 2 workspace.
 >> 
 >> ```bash
 >> # ---- Custom Setup (Specify the root directory of your ROS 2 workspace) ----
@@ -58,7 +63,7 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 >> 📄 Path Workspace Configuration [`user_workspace.txt`](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/user_workspace.txt)
 >> 
 >> #### 📍 Step 2: Execute the Loader Script
->> Run the script (⚡ lite_ld.sh) to download and map the package automatically:
+>> Run the `lite_ld.sh` script to automatically download and map the targeted package:
 >> 
 >> ```bash
 >> # Grant executable permissions to the deployment script if needed:
@@ -67,7 +72,7 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 >> # Fetch and deploy the target model description package(e.g., `tm5s`):
 >> ./lite_ld.sh tm5s
 >> 
->> # Use the force flag (-f) to overwrite existing legacy files(e.g., `tm12s`) if updating:
+>> # Use the force flag (-f) to overwrite existing legacy files(e.g., `tm12s`) when updating:
 >> #./lite_ld.sh tm12s tm_description -f
 >>```
 >>
@@ -104,12 +109,12 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 >>     cp -r /mnt/d/TM_Cobots_ROS2_Description/tm_description/cobot_s/tm5s_description /mnt/d/tm2_ws/tm2_ros2/tm_description/cobot_s/
 >>     ```
 >> 
->> 💡 **Tip:** Replace `tm5s_description` with `tm7s_description` or other target models as required.
+>> 💡 **Tip:** Replace `tm5s_description` with `tm7s_description`, `tm12sxft_description`, or other target models as required.
 >>
 
 ---
 
-## &sect; Post-Deployment Verification & Compilation
+## ⚡ Post-Deployment Verification & Compilation
 
 ⚠️ **Important:** If you have previously compiled the workspace or added new application packages, you **must** purge old build artifacts. Failing to clean the workspace may cause ROS 2 indexing mismatches and compilation errors.
 

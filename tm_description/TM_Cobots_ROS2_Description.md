@@ -1,64 +1,159 @@
 # TM_Cobots_ROS2_Description
 
-This repository contains the official ROS 2 Robot description files (URDF/Xacro) and 3D meshes for the Techman Robot's **TM AI Cobot S** and **TM AI Cobot** series. These files are essential for robot visualization (**RViz**), simulation (**Gazebo**), and motion planning (**MoveIt 2**).
+This repository contains the official ROS 2 Robot description files (URDF/Xacro) and 3D meshes for the Techman Robot's **TM AI Cobot S** and **TM AI Cobot** series. These files are essential for robot visualization (**RViz2**), simulation (**Gazebo**), and motion planning (**MoveIt 2**).
 
 ---
 
-## 1. Supported Robot Models
+## 1. Support Package Matrix
 
-The repository provides comprehensive coverage for the following model configurations:
+The repository provides comprehensive coverage for the **TM AI Cobot S** and **TM AI Cobot** series. Each robot model includes verified data mapped across four primary hardware configurations:
 
-*   **TM AI Cobot S Series:** 
-    *   **Standard:** TM5S, TM6S, TM7S, TM12S, TM14S, TM20S
-    *   **Standard-X:** TM5SX, TM6SX, TM7SX, TM12SX, TM14SX, TM20SX
-    *   **FT module:** TM5SFT, TM6SFT, TM7SFT, TM12SFT, TM14SFT, TM20SFT, TM25SFT, TM30SFT
-    *   **FT-X module:** TM5SXFT, TM6SXFT, TM7SXFT, TM12SXFT, TM14SXFT, TM20SXFT, TM25SXFT, TM30SXFT
-*   **TM AI Cobot Series:** 
-    *   **Standard:** TM5-900, TM5-700, TM12, TM14, TM16, TM20
-    *   **Standard-X:** TM5X-900, TM5X-700, TM12X, TM14X, TM16X, TM20X
+[1]&nbsp; **Standard Configuration:** &nbsp; Base robot model equipped with the integrated **Eye-in-Hand Camera** module.<br>
+[2]&nbsp; **Standard-X Configuration:** &nbsp; Pure robotic arm variant designed **without** the camera module at the flange.<br>
+[3]&nbsp; **FT Configuration:** &nbsp; Advanced variant featuring both the **Eye-in-Hand Camera** and an integrated **Force-Torque (FT) Sensor**.<br>
+[4]&nbsp; **FT-X Configuration:** &nbsp; Specialized variant equipped with the **Force-Torque (FT) Sensor** but **excluding** the camera module.<br>
+
+### TM AI Cobot S and TM AI Cobot Series Model Matrix
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2"></th>
+      <th rowspan="2">Series</th>
+      <th colspan="4" style="text-align: center;">Xacro model name</th>
+    </tr>
+    <tr>
+      <th style="text-align: center;">Standard</th>
+      <th style="text-align: center;">Standard-X</th>
+      <th style="text-align: center;">FT</th>
+      <th style="text-align: center;">FT-X</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>TM AI Cobot S Series</b></td>
+      <td><b>TM5S</b></td>
+      <td align="center">tm5s</td>
+      <td align="center">tm5sx</td>
+      <td align="center">tm5sft</td>
+      <td align="center">tm5sxft</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM6S</b></td>
+      <td align="center">tm6s</td>
+      <td align="center">tm6sx</td>
+      <td align="center">tm6sft</td>
+      <td align="center">tm6sxft</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM7S</b></td>
+      <td align="center">tm7s</td>
+      <td align="center">tm7sx</td>
+      <td align="center">tm7sft</td>
+      <td align="center">tm7sxft</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM12S</b></td>
+      <td align="center">tm12s</td>
+      <td align="center">tm12sx</td>
+      <td align="center">tm12sft</td>
+      <td align="center">tm12sxft</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM14S</b></td>
+      <td align="center">tm14s</td>
+      <td align="center">tm14sx</td>
+      <td align="center">tm14sft</td>
+      <td align="center">tm14sxft</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM20S</b></td>
+      <td align="center">tm20s</td>
+      <td align="center">tm20sx</td>
+      <td align="center">tm20sft</td>
+      <td align="center">tm20sxft</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM25S</b></td>
+      <td align="center">—</td>
+      <td align="center">—</td>
+      <td align="center">📌 <b>tm25sft</b></td>
+      <td align="center">📌 <b>tm25sxft</b></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM30S</b></td>
+      <td align="center">—</td>
+      <td align="center">—</td>
+      <td align="center">📌 <b>tm30sft</b></td>
+      <td align="center">📌 <b>tm30sxft</b></td>
+    </tr>
+    <tr>
+      <td><b>TM AI Cobot Series</b></td>
+      <td><b>TM5-700</b></td>
+      <td align="center">tm5-700</td>
+      <td align="center">tm5x-700</td>
+      <td align="center">—</td>
+      <td align="center">—</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM5-900</b></td>
+      <td align="center">tm5-900</td>
+      <td align="center">tm5x-900</td>
+      <td align="center">—</td>
+      <td align="center">—</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM12</b></td>
+      <td align="center">tm12</td>
+      <td align="center">tm12x</td>
+      <td align="center">—</td>
+      <td align="center">—</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM14</b></td>
+      <td align="center">tm14</td>
+      <td align="center">tm14x</td>
+      <td align="center">—</td>
+      <td align="center">—</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM16</b></td>
+      <td align="center">tm16</td>
+      <td align="center">tm16x</td>
+      <td align="center">—</td>
+      <td align="center">—</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><b>TM20</b></td>
+      <td align="center">tm20</td>
+      <td align="center">tm20x</td>
+      <td align="center">—</td>
+      <td align="center">—</td>
+    </tr>
+  </tbody>
+</table>
+
+> [!NOTE]
+> **Xacro Model Name to New Official TM Robot Name Mapping:**<br>
+> &emsp;📌 `tm25sft` → Corresponding Official Model: **TM25S**<br>
+> &emsp;📌 `tm25sxft` → Corresponding Official Model: **TM25SX**<br>
+> &emsp;📌 `tm30sft` → Corresponding Official Model: **TM30S**<br>
+> &emsp;📌 `tm30sxft` → Corresponding Official Model: **TM30SX**<br>
 
 ---
 
-## 2. Support Package Matrix
-
-Each robot model includes verified data mapped across four primary configurations:
-1.  **Standard:** Base robot model with the integrated eye-in-hand camera.
-2.  **Standard-X:** Model variants without the integrated camera module.
-3.  **FT module:** Model featuring an integrated Force-Torque sensor at the flange.
-4.  **FT-X module:** Model featuring a Force-Torque sensor but excluding the integrated camera.
-
-| Hardware Configuration Matrix | Eye-in-Hand Camera | Flange Force-Torque (FT) Sensor |
-| :---: | :---: | :---: |
-| **Standard** | ✅ Integrated | ❌ None |
-| **Standard-X** | ❌ None | ❌ None |
-| **FT Module** | ✅ Integrated | ✅ Integrated |
-| **FT-X Module** | ❌ None | ✅ Integrated |
-
-### TM AI Cobot S Series Matrix Table
-| Model Series | Standard | Standard-X | FT module | FT-X module |
-| :--- | :---: | :---: | :---: | :---: |
-| **TM5S** | TM5S | TM5SX | TM5SFT | TM5SXFT |
-| **TM6S** | TM6S | TM6SX | TM6SFT | TM6SXFT |
-| **TM7S** | TM7S | TM7SX | TM7SFT | TM7SXFT |
-| **TM12S** | TM12S | TM12SX | TM12SFT | TM12SXFT |
-| **TM14S** | TM14S | TM14SX | TM14SFT | TM14SXFT |
-| **TM20S** | TM20S | TM20SX | TM20SFT | TM20SXFT |
-| **TM25S** | - | - | TM25SFT | TM25SXFT |
-| **TM30S** | - | - | TM30SFT | TM30SXFT |
-
-### TM AI Cobot Series Matrix Table
-| Model Series | Standard | Standard-X | FT module | FT-X module |
-| :--- | :---: | :---: | :---: | :---: |
-| **TM5-700** | TM5-700 | TM5X-700 | - | - |
-| **TM5-900** | TM5-900 | TM5X-900 | - | - |
-| **TM12** | TM12 | TM12X | - | - |
-| **TM14** | TM14 | TM14X | - | - |
-| **TM16** | TM16 | TM16X | - | - |
-| **TM20** | TM20 | TM20X | - | - |
-
----
-
-## 3. Directory Structure Examples
+## 2. Directory Structure Examples
 
 The repository adheres to standard ROS 2 package conventions. Below are directory tree examples showing how configurations are mapped for different series.
 
@@ -70,17 +165,17 @@ tm2_ws/ or ros2_ws/ or user_ws/            # User's workspace root directory
 └── tm2_ros2/                              # TM ROS 2 standard source code directory (Acts as the 'src' space)
     └── tm_description/                    # Robot Model Description Module
         └── cobot_s/                       # TM Cobot S-Series folder
-                ├── tm12s_description/     # TM12S 3D meshes, URDF models, and Xacro files
-                     ├── launch/           # ROS 2 launch scripts
-                     ├── meshes/           # 3D visualization & collision models
-                     │   ├── tm12s/        # Standard meshes
-                     │   ├── tm12sx/       # X-variant meshes
-                     │   ├── tm12sft/      # Force-Torque variant meshes
-                     │   └── tm12sxft/     # X + Force-Torque variant meshes
-                     ├── rviz/             # RViz2 configuration files
-                     ├── xacro/            # Parameterized robot description source files
-                     ├── CMakeLists.txt    # Build configuration
-                     └── package.xml       # ROS 2 package dependencies metadata
+            └── tm12s_description/         # TM12S 3D meshes, URDF models, and Xacro files
+                ├── launch/                # ROS 2 launch scripts
+                ├── meshes/                # 3D visualization & collision models
+                │   ├── tm12s/             # Standard meshes
+                │   ├── tm12sx/            # X-variant meshes
+                │   ├── tm12sft/           # Force-Torque variant meshes
+                │   └── tm12sxft/          # X + Force-Torque variant meshes
+                ├── rviz/                  # RViz2 configuration files
+                ├── xacro/                 # Parameterized robot description source files
+                ├── CMakeLists.txt         # Build configuration
+                └── package.xml            # ROS 2 package dependencies metadata
 ```
 
 ### Example B: TM AI Cobot Series (e.g., TM5-900)
@@ -90,21 +185,21 @@ Located under the TM5-900 series configuration subdirectory:
 tm2_ws/ or ros2_ws/ or user_ws/            # User's workspace root directory
 └── tm2_ros2/                              # TM ROS 2 standard source code directory (Acts as the 'src' space)
     └── tm_description/                    # Robot Model Description Module
-        └── cobot/                         # TM Cobot Series folder
-                ├── tm5_900_description/   # TM5-900 3D meshes, URDF models, and Xacro files
-                     ├── launch/           # ROS 2 launch scripts
-                     ├── meshes/           # 3D visualization & collision models
-                     │   ├── tm5-900/      # Standard meshes
-                     │   └── tm5x-900/     # X-variant meshes
-                     ├── rviz/             # RViz2 configuration files
-                     ├── xacro/            # Parameterized robot description source files
-                     ├── CMakeLists.txt    # Build configuration
-                     └── package.xml       # ROS 2 package dependencies metadata
+        └── cobot/                         # TM AI Cobot series folder
+            └── tm5_900_description/       # TM5-900 3D meshes, URDF models, and Xacro files
+                ├── launch/                # ROS 2 launch scripts
+                ├── meshes/                # 3D visualization & collision models
+                │   ├── tm5-900/           # Standard meshes
+                │   └── tm5x-900/          # X-variant meshes
+                ├── rviz/                  # RViz2 configuration files
+                ├── xacro/                 # Parameterized robot description source files
+                ├── CMakeLists.txt         # Build configuration
+                └── package.xml            # ROS 2 package dependencies metadata
 ```
 
 ---
 
-## 4. Quick Start
+## 3. Quick Start
 
 Verify that the robot description files and 3D meshes load correctly into the coordinate frame workspace by launching the state publisher.
 
@@ -115,14 +210,14 @@ ros2 launch <tm_robot_series>_description view_robot.launch.py robot_model:=<tm_
 ```
 
 #### Parameter Requirements
-* **`<tm_robot_series>`**: The lowercase designation of the TM Robot series (e.g., `tm12s`, `tm6s`, `tm30s`).
-* **`<tm_robot_type>`**: The exact lowercase model identifier of the TM Robot (e.g., `tm12s`, `tm12sx`, `tm12sft`, or `tm12sxft`).
+* **`<tm_robot_series>`**: The lowercase designation of the TM Robot series (e.g., `tm12s`, `tm6s`, `tm5-900`).
+* **`<tm_robot_type>`**: The exact lowercase model identifier of the TM Robot (e.g., `tm12sft`, `tm6sx`, `tm5x-900`).
 
 ---
 
 ### Example: Visualizing the TM12SFT Robot
 
-Follow these step-by-step commands to source your workspace and launch the visualization interface:
+Follow these step-by-step commands to source your workspace environment and launch the RViz2 visualization interface:
 
 ```bash
 # 1. Source the workspace environment
