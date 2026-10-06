@@ -109,7 +109,7 @@ Your workspace **must** maintain the exact layout below to prevent dependency fa
 >>     cp -r /mnt/d/TM_Cobots_ROS2_Description/tm_description/cobot_s/tm5s_description /mnt/d/tm2_ws/tm2_ros2/tm_description/cobot_s/
 >>     ```
 >> 
->> 💡 **Tip:** Replace `tm5s_description` with `tm7s_description`, `tm12sxft_description`, or other target models as required.
+>> 💡 **Tip:** Replace `tm5s_description` with `tm7s_description`, `tm12s_description`, or other target models as required.
 >>
 
 ---
