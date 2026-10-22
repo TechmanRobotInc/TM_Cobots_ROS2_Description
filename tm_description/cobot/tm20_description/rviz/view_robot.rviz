@@ -64,6 +64,10 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        ft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         link_1:
           Alpha: 1
           Show Axes: false

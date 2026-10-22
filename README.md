@@ -1,16 +1,31 @@
-# TM_Cobots_ROS2_Description
+# TM_Cobots_ROS2_Description (Quick Start Guide)
 
 :bookmark_tabs: TM ROS2 version **<ins>Jazzy or higher</ins>** is strictly required to support the TM Cobots Series directory structure syntax.
 
 This repository provides official ROS 2 description files (URDF/Xacro) and 3D meshes for the **TM AI Cobot S** and **TM AI Cobot** series. It supports various configurations, including Standard, Standard-X, FT, and FT-X modules for robot visualization (**RViz2**), simulation (**Gazebo**), and motion planning (**MoveIt 2**).
 
-For more detailed information, please refer to [TM_Cobots_ROS2_Description Usage Guideline](./tm_description/TM_Cobots_ROS2_Description.md).
+Detailed operational documentation is available in the [TM_Cobots_ROS2_Description Usage Guideline](./tm_description/TM_Cobots_ROS2_Description.md).
 
 Additionally, the following guide describes **how to migrate these standalone description packages into a legacy `tm2_ros2` workspace**.
 
 ---
 
-## Cobot Models Quick Reference Table
+## 🚀 Quick Start Workflow
+
+If you have already cloned the baseline repository via:
+```bash
+git clone https://github.com/TechmanRobotInc/tm2_ros2.git -b jazzy
+```
+
+Follow these steps to deploy and activate your target planning profile:
+
+1. **Verify Hardware Support:** Expand the **Supported Cobot Models Matrix** below to confirm your specific model configuration.
+2. **Deploy Configuration Profiles:** Migrate the required standalone description packages into your active `tm2_ros2` workspace (refer to the documentation assets and directory maps below).
+3. **Compile and Source:** Rebuild the local workspace using standard `colcon` parameters and resource your environment variables to initiate development hooks.
+
+---
+
+## Supported Cobot Models Matrix
 
 💡 You can find the full list of downloadable cobot models in the table below:
 
@@ -26,7 +41,7 @@ The configuration matrix below maps all supported TM Robot Series models across 
     <tr>
       <th rowspan="2"></th>
       <th rowspan="2">Series</th>
-      <th colspan="4" style="text-align: center;">Xacro model name</th>
+      <th colspan="4" style="text-align: center;">Xacro Model Name</th>
     </tr>
     <tr>
       <th style="text-align: center;">Standard</th>
@@ -87,18 +102,18 @@ The configuration matrix below maps all supported TM Robot Series models across 
     <tr>
       <td></td>
       <td><b>TM25S</b></td>
-      <td align="center">—</td>
-      <td align="center">—</td>
-      <td align="center">📌 TM25SFT</td>
-      <td align="center">📌 TM25SXFT</td>
+      <td align="center">TM25S</td>
+      <td align="center">TM25SX</td>
+      <td align="center">TM25SFT</td>
+      <td align="center">TM25SXFT</td>
     </tr>
     <tr>
       <td></td>
       <td><b>TM30S</b></td>
-      <td align="center">—</td>
-      <td align="center">—</td>
-      <td align="center">📌 TM30SFT</td>
-      <td align="center">📌 TM30SXFT</td>
+      <td align="center">TM30S</td>
+      <td align="center">TM30SX</td>
+      <td align="center">TM30SFT</td>
+      <td align="center">TM30SXFT</td>
     </tr>
     <tr>
       <td><b>TM AI Cobot Series</b></td>
@@ -153,53 +168,52 @@ The configuration matrix below maps all supported TM Robot Series models across 
 
 <br>
 
-> 📌 **Xacro Model Name to New Official TM Robot Name Mapping:**<br>
-> Simply strip the `FT` suffix to get the official model name (e.g., `TM25SFT` → **TM25S**, `TM30SXFT` → **TM30SX**).<br>
-
 </details>
 
 ---
 
 ## Migration & Deployment Guide
 
-You can use the usual method to download and copy the required robot description files to the correct relative location within your workspace, or you can use the guide below to migrate the **TM AI Cobot / Cobot S Series** robot description files into the legacy `tm2_ros2` workspace via the script method.
+This guide details the procedure for migrating specific 3D robot description files for the **TM AI Cobot / Cobot S Series** into a legacy or standard `tm2_ros2` workspace using automated scripts. Alternatively, asset folders can be manually cloned and copied into their matching relative workspace paths.
 
-For more detailed information, please refer to [Migration & Deployment Usage Guideline](./Migration_and_Deployment_Guide.md).
+Comprehensive path and script instructions are available in the [Migration & Deployment Usage Guideline](./Migration_and_Deployment_Guide.md).
 
 <details>
-<summary>👁️ Click to expand/collapse the brief description</summary>
+<summary>👁️ Click to expand/collapse the migration footprint overview</summary>
 
 <br>
 
-This guide explains how to migrate robot description files for the **TM AI Cobot S Series** into the legacy `tm2_ros2` workspace.
-
-> 💡 **Note:** The legacy repository only includes the `tm12s` and `tm5-900` profiles by default. Other needed profiles must be retrieved from the standalone [TM_Cobots_ROS2_Description](https://github.com/TechmanRobotInc/TM_Cobots_ROS2_Description) repository.
+> 💡 **Baseline Note:** The default legacy repository bundles only the `tm12s` and `tm5-900` asset profiles. All other alternative model profiles must be fetched from this standalone [TM_Cobots_ROS2_Description](https://github.com/TechmanRobotInc/TM_Cobots_ROS2_Description) repository.
 
 </details>
 
-### Quick Start with Examples
+---
 
-Run the `lite_ld.sh` script to install the specific cobot description files into the `tm2_ros2` workspace.
+### Progressive Scripted Installation Examples
 
-For more script information, please refer to [Loader Script Guide](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/README.md).
+Leverage the lightweight `lite_ld.sh` deployment script to extract and map target description suites directly into your active workspace.
 
-* **Example: Standard Installation**  
-  Install TM12SXFT description files:
-  ```bash
-  ./lite_ld.sh tm12sxft
-  ```
-  ![load_tm12sxft_description](figures/load_tm12sxft_description.png)
+📖 Review the [Loader Script Documentation](https://github.com/TechmanRobotInc/tm2_ros2/tree/jazzy/configs/tm_loader/README.md) for detailed tool arguments.
+
+#### 🔹 Example 1: TM12SXFT Installation
+To extract and deploy the kinematic description files (URDF/Xacro) for the `tm12sxft` profile:
+```bash
+./lite_ld.sh tm12sxft
+```
+![load_tm12sxft_description](figures/load_tm12sxft_description.png)
 
 <details>
-<summary>👁️ Click to expand/collapse the Forced Overwrite example</summary>
+<summary>👁️ Click to expand/collapse the Forced Overwrite example for alternative models</summary>
 
 <br>
 
-* **Example: Forced Overwrite**  
-  Install TM5X-900 description files. Use the force flag (`-f`) to overwrite existing legacy files without confirmation:
-  ```bash
-  ./lite_ld.sh tm5x-900 -f
-  ```
-  ![load_tm5x_900_description](figures/load_tm5x_900_description.png)
+#### 🔹 Example 2: Forced Overwrite Update Pipeline
+
+To fetch the `tm5x-900` robot description files without any interactive terminal confirmation screens, use the force flag (`-f`). This will allow you to purge any conflicting local asset folders instantly.
+
+```bash
+./lite_ld.sh tm5x-900 -f
+```
+![load_tm5x_900_description](figures/load_tm5x_900_description.png)
 
 </details>

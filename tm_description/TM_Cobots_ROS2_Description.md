@@ -19,7 +19,7 @@ The repository provides comprehensive coverage for the **TM AI Cobot S** and **T
     <tr>
       <th rowspan="2"></th>
       <th rowspan="2">Series</th>
-      <th colspan="4" style="text-align: center;">Xacro model name</th>
+      <th colspan="4" style="text-align: center;">Xacro Model Name</th>
     </tr>
     <tr>
       <th style="text-align: center;">Standard</th>
@@ -80,18 +80,18 @@ The repository provides comprehensive coverage for the **TM AI Cobot S** and **T
     <tr>
       <td></td>
       <td><b>TM25S</b></td>
-      <td align="center">—</td>
-      <td align="center">—</td>
-      <td align="center">📌 <b>tm25sft</b></td>
-      <td align="center">📌 <b>tm25sxft</b></td>
+      <td align="center">tm25s</td>
+      <td align="center">tm25sx</td>
+      <td align="center">tm25sft</td>
+      <td align="center">tm25sxft</td>
     </tr>
     <tr>
       <td></td>
       <td><b>TM30S</b></td>
-      <td align="center">—</td>
-      <td align="center">—</td>
-      <td align="center">📌 <b>tm30sft</b></td>
-      <td align="center">📌 <b>tm30sxft</b></td>
+      <td align="center">tm30s</td>
+      <td align="center">tm30sx</td>
+      <td align="center">tm30sft</td>
+      <td align="center">tm30sxft</td>
     </tr>
     <tr>
       <td><b>TM AI Cobot Series</b></td>
@@ -143,13 +143,6 @@ The repository provides comprehensive coverage for the **TM AI Cobot S** and **T
     </tr>
   </tbody>
 </table>
-
-> [!NOTE]
-> **Xacro Model Name to New Official TM Robot Name Mapping:**<br>
-> &emsp;📌 `tm25sft` → Corresponding Official Model: **TM25S**<br>
-> &emsp;📌 `tm25sxft` → Corresponding Official Model: **TM25SX**<br>
-> &emsp;📌 `tm30sft` → Corresponding Official Model: **TM30S**<br>
-> &emsp;📌 `tm30sxft` → Corresponding Official Model: **TM30SX**<br>
 
 ---
 
@@ -211,7 +204,7 @@ ros2 launch <tm_robot_series>_description view_robot.launch.py robot_model:=<tm_
 
 #### Parameter Requirements
 * **`<tm_robot_series>`**: The lowercase designation of the TM Robot series (e.g., `tm12s`, `tm6s`, `tm5-900`).
-* **`<tm_robot_type>`**: The exact lowercase model identifier of the TM Robot (e.g., `tm12sft`, `tm6sx`, `tm5x-900`).
+* **`<tm_robot_type>`**: The exact lowercase model identifier of the TM Robot (e.g., `tm12sft`, `tm6sx`, `tm5x-900`). (Identical to `<xacro_model_name>`)
 
 ---
 
