@@ -79,9 +79,9 @@
     <xacro:property name="cogx_2" value="${  338224.39*unit_factor2}" />
     <xacro:property name="cogy_2" value="${  0.0000000*unit_factor2}" />
     <xacro:property name="cogz_2" value="${ -182283.92*unit_factor2}" />
-    <xacro:property name="cogx_3" value="${  1.6047637*unit_factor2}" />
-    <xacro:property name="cogy_3" value="${ -544.92737*unit_factor2}" />
-    <xacro:property name="cogz_3" value="${ -55316.774*unit_factor2}" />
+    <xacro:property name="cogx_3" value="${  518282.63*unit_factor2}" />
+    <xacro:property name="cogy_3" value="${  1.6047637*unit_factor2}" />
+    <xacro:property name="cogz_3" value="${ -54492.737*unit_factor2}" />
     <xacro:property name="cogx_4" value="${ -3.6473102*unit_factor2}" />
     <xacro:property name="cogy_4" value="${ -6381.2605*unit_factor2}" />
     <xacro:property name="cogz_4" value="${  7094.8936*unit_factor2}" />
